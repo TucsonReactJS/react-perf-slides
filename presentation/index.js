@@ -42,7 +42,9 @@ const images = {
     cactus: require("../assets/ReactCactus.svg"),
     me: require("../assets/me.png"),
     perfTool: require("../assets/perf_tool.png"),
-    markdown: require("../assets/markdown.png")
+    printWasted: require("../assets/print_wasted.png"),
+    printWastedFixed: require("../assets/print_wasted_fixed.png")
+
 };
 
 preloader(images);
@@ -121,7 +123,7 @@ export default class Presentation extends React.Component {
                         </Text>
                     </Fill>
                     <Fill>
-                        <Image src={images.perfTool} margin="40px auto 40px" height="293px"/>
+                        <Image src={images.perfTool} height="350px" />
                     </Fill>
                 </Slide>
                 <Slide transition={["slide"]}>
@@ -195,8 +197,10 @@ export default class Presentation extends React.Component {
                         Problems
                     </Heading>
                     <List>
-                        <Appear><ListItem textColor="tertiary" ><span>Re-rendering the entire app</span></ListItem></Appear>
-                        <Appear><ListItem textColor="tertiary"><span style={{textDecoration:'line-through'}}>Messy</span></ListItem></Appear>
+                        <Appear><ListItem
+                        textColor="tertiary"><span>Re-rendering the entire app</span></ListItem></Appear>
+                        <Appear><ListItem textColor="tertiary"><span
+                        style={{textDecoration:'line-through'}}>Messy</span></ListItem></Appear>
                         <Appear><ListItem textColor="tertiary"><span style={{textDecoration:'line-through'}}>Not composable and reusable</span></ListItem></Appear>
                     </List>
                 </Slide>
@@ -204,15 +208,30 @@ export default class Presentation extends React.Component {
                     <Heading size={1} caps textColor="tertiary">
                         How do we fix it?
                     </Heading>
-                    <Heading size={5}  textColor="#00D8FF">
+                    <Heading size={5} textColor="#00D8FF">
                         React Performance Tools
+                    </Heading>
+                </Slide>
+                <Slide transition={["slide"]} bgColor="primary" maxWidth="1400px">
+                    <CodeSlide
+                    lang="jsx"
+                    slideIndex={6}
+                    code={require("raw!../assets/step_2_2.example")}
+                    ranges={[
+                  { loc: [5, 9] }
+                  ]}/>
+                </Slide>
+                <Slide>
+                    <Image src={images.printWasted} margin="0px auto 40px" style={{width:"100%",height:"auto"}}/>
+                    <Heading size={1} fit>
+                        Perf.printWasted()
                     </Heading>
                 </Slide>
                 <Slide transition={["slide"]}>
                     <Heading size={1} caps textColor="tertiary">
                         Step 3
                     </Heading>
-                    <Heading size={5}  textColor="#00D8FF">
+                    <Heading size={5} textColor="#00D8FF">
                         shouldComponentUpdate
                     </Heading>
                 </Slide>
@@ -226,13 +245,17 @@ export default class Presentation extends React.Component {
                     { loc: [21, 24] }
                   ]}/>
                 </Slide>
+                <Slide>
+                    <Image src={images.printWastedFixed} margin="0px auto 40px" style={{width:"100%",height:"auto"}}/>
+                </Slide>
                 <Slide transition={["slide"]}>
                     <Heading size={1} caps textColor="tertiary">
                         Problems
                     </Heading>
                     <List>
-                        <Appear><ListItem textColor="tertiary" ><span style={{textDecoration:'line-through'}}>Re-rendering the entire app</span></ListItem></Appear>
-                        <Appear><ListItem textColor="tertiary"><span style={{textDecoration:'line-through'}}>Messy</span></ListItem></Appear>
+                        <Appear><ListItem textColor="tertiary"><span style={{textDecoration:'line-through'}}>Re-rendering the entire app</span></ListItem></Appear>
+                        <Appear><ListItem textColor="tertiary"><span
+                        style={{textDecoration:'line-through'}}>Messy</span></ListItem></Appear>
                         <Appear><ListItem textColor="tertiary"><span style={{textDecoration:'line-through'}}>Not composable and reusable</span></ListItem></Appear>
                     </List>
                 </Slide>

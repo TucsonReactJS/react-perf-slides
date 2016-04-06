@@ -7,6 +7,7 @@ Appear,
 BlockQuote,
 Cite,
 CodePane,
+Code,
 Deck,
 Fill,
 Heading,
@@ -23,6 +24,8 @@ Text
 } from "spectacle";
 
 import CodeSlide from './code_slide';
+
+import Logo from "./animated_logo/logo.jsx";
 
 // Import image preloader util
 import preloader from "spectacle/lib/utils/preloader";
@@ -46,8 +49,8 @@ const images = {
     printWastedFixed: require("../assets/print_wasted_fixed.png"),
     devProfile: require("../assets/dev_profile.png"),
     prodProfile: require("../assets/prod_profile.png"),
-
-
+    animationReactTools: require("../assets/animation_react_tools.png"),
+    mj: require("../assets/mj.gif")
 };
 
 preloader(images);
@@ -60,7 +63,7 @@ export default class Presentation extends React.Component {
     render() {
         return (
         <Spectacle theme={theme}>
-            <Deck transition={["zoom", "slide"]} transitionDuration={500}>
+            <Deck transition={["zoom", "slide"]} transitionDuration={500} progress="bar">
                 <Slide transition={["zoom"]} bgColor="primary">
                     <Image src={images.cactus} margin="0px auto 40px" height="293px"/>
                     <Heading size={1} caps fit>
@@ -146,6 +149,9 @@ export default class Presentation extends React.Component {
                     </Heading>
                 </Slide>
                 <Slide transition={["slide"]} bgColor="primary" maxWidth="1400px">
+                    <Text textSize=".8rem" textColor="tertiary">
+                        master.jsx
+                    </Text>
                     <CodeSlide
                     lang="jsx"
                     slideIndex={6}
@@ -178,6 +184,9 @@ export default class Presentation extends React.Component {
                     </Heading>
                 </Slide>
                 <Slide transition={["slide"]} bgColor="primary" maxWidth="1400px">
+                    <Text textSize=".8rem" textColor="tertiary">
+                        master.jsx
+                    </Text>
                     <CodeSlide
                     lang="jsx"
                     slideIndex={7}
@@ -187,6 +196,9 @@ export default class Presentation extends React.Component {
                   { loc: [126, 127]}]}/>
                 </Slide>
                 <Slide transition={["slide"]} bgColor="primary" maxWidth="1400px">
+                    <Text textSize=".8rem" textColor="tertiary">
+                        detail.jsx
+                    </Text>
                     <CodeSlide
                     lang="jsx"
                     slideIndex={8}
@@ -216,6 +228,9 @@ export default class Presentation extends React.Component {
                     </Heading>
                 </Slide>
                 <Slide transition={["slide"]} bgColor="primary" maxWidth="1400px">
+                    <Text textSize=".8rem" textColor="tertiary">
+                        index.js
+                    </Text>
                     <CodeSlide
                     lang="jsx"
                     slideIndex={9}
@@ -239,6 +254,9 @@ export default class Presentation extends React.Component {
                     </Heading>
                 </Slide>
                 <Slide transition={["slide"]} bgColor="primary" maxWidth="1400px">
+                    <Text textSize=".8rem" textColor="tertiary">
+                        detail.jsx
+                    </Text>
                     <CodeSlide
                     lang="jsx"
                     slideIndex={10}
@@ -260,6 +278,9 @@ export default class Presentation extends React.Component {
                     </Heading>
                 </Slide>
                 <Slide transition={["slide"]} bgColor="primary" maxWidth="1400px">
+                    <Text textSize=".8rem" textColor="tertiary">
+                        master.jsx
+                    </Text>
                     <CodeSlide
                     lang="jsx"
                     slideIndex={11}
@@ -270,6 +291,9 @@ export default class Presentation extends React.Component {
                   ]}/>
                 </Slide>
                 <Slide transition={["slide"]} bgColor="primary" maxWidth="1400px">
+                    <Text textSize=".8rem" textColor="tertiary">
+                        form.jsx
+                    </Text>
                     <CodeSlide
                     lang="jsx"
                     slideIndex={12}
@@ -280,6 +304,9 @@ export default class Presentation extends React.Component {
                   ]}/>
                 </Slide>
                 <Slide transition={["slide"]} bgColor="primary" maxWidth="1400px">
+                    <Text textSize=".8rem" textColor="tertiary">
+                        form.jsx
+                    </Text>
                     <CodeSlide
                     lang="jsx"
                     slideIndex={13}
@@ -301,13 +328,14 @@ export default class Presentation extends React.Component {
                     </List>
                 </Slide>
                 <Slide transition={["slide"]}>
-                    <Appear>
-                        <Heading size={5} textColor="#00D8FF">
-                            PropTypes and Production Builds
-                        </Heading>
-                    </Appear>
+                    <Heading size={5} textColor="#00D8FF">
+                        PropTypes and Production Builds
+                    </Heading>
                 </Slide>
                 <Slide transition={["slide"]} bgColor="primary" maxWidth="1400px">
+                    <Text textSize=".8rem" textColor="tertiary">
+                        form.jsx
+                    </Text>
                     <CodeSlide
                     lang="jsx"
                     slideIndex={14}
@@ -331,6 +359,9 @@ export default class Presentation extends React.Component {
                     <Image src={images.prodProfile} margin="0px auto 40px" width="100%"/>
                 </Slide>
                 <Slide transition={["slide"]} bgColor="primary" maxWidth="1400px">
+                    <Text textSize=".8rem" textColor="tertiary">
+                        webpack.config.js
+                    </Text>
                     <CodeSlide
                     lang="jsx"
                     slideIndex={15}
@@ -352,6 +383,9 @@ export default class Presentation extends React.Component {
                     <Image src={images.devProfile} margin="0px auto 40px" width="100%"/>
                 </Slide>
                 <Slide transition={["slide"]} bgColor="primary" maxWidth="1400px">
+                    <Text textSize=".8rem" textColor="tertiary">
+                        list.jsx
+                    </Text>
                     <CodeSlide
                     lang="jsx"
                     slideIndex={16}
@@ -370,6 +404,9 @@ export default class Presentation extends React.Component {
                     </Heading>
                 </Slide>
                 <Slide transition={["slide"]} bgColor="primary" maxWidth="1400px">
+                    <Text textSize=".8rem" textColor="tertiary">
+                        form.jsx
+                    </Text>
                     <CodeSlide
                     lang="jsx"
                     slideIndex={17}
@@ -380,13 +417,106 @@ export default class Presentation extends React.Component {
                   ]}/>
                 </Slide>
                 <Slide transition={["slide"]} bgColor="primary" maxWidth="1400px">
+                    <Text textSize=".8rem" textColor="tertiary">
+                        .babelrc
+                    </Text>
                     <CodeSlide
                     lang="jsx"
-                    slideIndex={15}
+                    slideIndex={18}
                     code={require("raw!../assets/babelrc.example")}
                     ranges={[
                      { loc: [1, 2] }
                   ]}/>
+                </Slide>
+                <Slide transition={["slide"]}>
+                    <Heading size={1} caps textColor="tertiary">
+                        Final Thoughts
+                    </Heading>
+                    <List>
+                        <Appear><ListItem textColor="tertiary">Avoid long running/blocking tasks in the lifecycle
+                            methods</ListItem></Appear>
+                        <Appear><ListItem textColor="tertiary">JS Performance Best Practices === React Performance Best
+                            Practices</ListItem></Appear>
+                        <Appear>
+                            <ListItem textColor="tertiary">Wrap expensive validations in Prod checks</ListItem>
+                        </Appear>
+                        <Appear><CodePane source={require("raw!../assets/prod_check.example")}/></Appear>
+                    </List>
+                </Slide>
+                <Slide transition={["slide"]} bgColor="primary">
+                    <Fill>
+                        <Text caps size={1} textColor="tertiary">
+                            Questions/Comments?
+                        </Text>
+                    </Fill>
+                </Slide>
+                <Slide transition={["slide"]} bgColor="primary">
+                    <Fill>
+                        <Text caps size={1} textColor="tertiary">
+                            React Web Animation
+                        </Text>
+                    </Fill>
+                    <Fill>
+                        <Logo/>
+                    </Fill>
+                </Slide>
+                <Slide transition={["slide"]}>
+                    <Heading size={1} caps textColor="tertiary">
+                        What is it?
+                    </Heading>
+                    <List>
+                        <Appear><ListItem textColor="tertiary">React component wrappers around the Web Animations
+                            API</ListItem></Appear>
+                    </List>
+                </Slide>
+                <Slide transition={["slide"]} bgColor="primary" maxWidth="1400px">
+                    <Text textSize=".8rem" textColor="tertiary">
+                        logo.jsx
+                    </Text>
+                    <CodeSlide
+                    lang="jsx"
+                    slideIndex={19}
+                    code={require("raw!../assets/logo.example")}
+                    ranges={[
+                     { loc: [1, 2] },
+                     { loc: [39, 42] },
+                     { loc: [3, 8] },
+                     { loc: [9, 19] }
+                  ]}/>
+                </Slide>
+                <Slide transition={["slide"]}>
+                    <Heading size={4} textColor="tertiary">
+                        Declaring animation behavior with JSX is awesome.
+                    </Heading>
+                </Slide>
+                <Slide transition={["zoom"]} bgColor="primary">
+                    <Text textColor="tertiary">React Chrome Extension</Text>
+                    <Image src={images.animationReactTools} margin="0px auto 40px" width="100%"/>
+                </Slide>
+                <Slide transition={["slide"]}>
+                    <Link href="http://react-web-animation.surge.sh" size={1}
+                          textColor="#00D8FF">
+                        http://react-web-animation.surge.sh/
+                    </Link>
+                </Slide>
+                <Slide transition={["slide"]} bgColor="primary">
+                    <Fill>
+                        <Text caps size={1} textColor="tertiary">
+                            Questions/Comments?
+                        </Text>
+                    </Fill>
+                </Slide>
+                <Slide transition={["slide"]}>
+                    <Heading size={1} caps textColor="tertiary">
+                        Movie Time
+                    </Heading>
+                    <Fill>
+                        <Image src={images.mj} margin="40px auto 40px" height="300px"/>
+                    </Fill>
+                    <Link href="https://egghead.io/series/getting-started-with-redux" size={1}
+                          textColor="#00D8FF">
+                        https://egghead.io/series/getting-started-with-redux
+                    </Link>
                 </Slide>
             </Deck>
         </Spectacle>

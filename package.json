@@ -22,6 +22,7 @@
     "react": "^0.14.3",
     "react-addons-shallow-compare": "^0.14.8",
     "react-dom": "^0.14.3",
+    "react-web-animation": "0.0.9",
     "spectacle": "^1.0.0",
     "spectacle-code-slide": "^0.1.10"
   },

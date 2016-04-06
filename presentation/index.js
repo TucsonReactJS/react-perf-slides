@@ -43,7 +43,10 @@ const images = {
     me: require("../assets/me.png"),
     perfTool: require("../assets/perf_tool.png"),
     printWasted: require("../assets/print_wasted.png"),
-    printWastedFixed: require("../assets/print_wasted_fixed.png")
+    printWastedFixed: require("../assets/print_wasted_fixed.png"),
+    devProfile: require("../assets/dev_profile.png"),
+    prodProfile: require("../assets/prod_profile.png"),
+
 
 };
 
@@ -123,7 +126,7 @@ export default class Presentation extends React.Component {
                         </Text>
                     </Fill>
                     <Fill>
-                        <Image src={images.perfTool} height="350px" />
+                        <Image src={images.perfTool} height="350px"/>
                     </Fill>
                 </Slide>
                 <Slide transition={["slide"]}>
@@ -177,7 +180,7 @@ export default class Presentation extends React.Component {
                 <Slide transition={["slide"]} bgColor="primary" maxWidth="1400px">
                     <CodeSlide
                     lang="jsx"
-                    slideIndex={6}
+                    slideIndex={7}
                     code={require("raw!../assets/step_2.example")}
                     ranges={[
                   { loc: [106, 130] },
@@ -186,7 +189,7 @@ export default class Presentation extends React.Component {
                 <Slide transition={["slide"]} bgColor="primary" maxWidth="1400px">
                     <CodeSlide
                     lang="jsx"
-                    slideIndex={6}
+                    slideIndex={8}
                     code={require("raw!../assets/step_2_1.example")}
                     ranges={[
                   { loc: [21, 32] }
@@ -215,7 +218,7 @@ export default class Presentation extends React.Component {
                 <Slide transition={["slide"]} bgColor="primary" maxWidth="1400px">
                     <CodeSlide
                     lang="jsx"
-                    slideIndex={6}
+                    slideIndex={9}
                     code={require("raw!../assets/step_2_2.example")}
                     ranges={[
                   { loc: [5, 9] }
@@ -238,7 +241,7 @@ export default class Presentation extends React.Component {
                 <Slide transition={["slide"]} bgColor="primary" maxWidth="1400px">
                     <CodeSlide
                     lang="jsx"
-                    slideIndex={6}
+                    slideIndex={10}
                     code={require("raw!../assets/step_3.example")}
                     ranges={[
                   { loc: [19, 37] },
@@ -250,6 +253,44 @@ export default class Presentation extends React.Component {
                 </Slide>
                 <Slide transition={["slide"]}>
                     <Heading size={1} caps textColor="tertiary">
+                        Step 4 - 5 - 6
+                    </Heading>
+                    <Heading size={5} textColor="#00D8FF">
+                        Form and react-addons-shallow-compare
+                    </Heading>
+                </Slide>
+                <Slide transition={["slide"]} bgColor="primary" maxWidth="1400px">
+                    <CodeSlide
+                    lang="jsx"
+                    slideIndex={11}
+                    code={require("raw!../assets/step_4.example")}
+                    ranges={[
+                  { loc: [97, 117] },
+                    { loc: [111, 112] }
+                  ]}/>
+                </Slide>
+                <Slide transition={["slide"]} bgColor="primary" maxWidth="1400px">
+                    <CodeSlide
+                    lang="jsx"
+                    slideIndex={12}
+                    code={require("raw!../assets/step_4_1.example")}
+                    ranges={[
+                  { loc: [35, 47] },
+                    { loc: [14, 17] }
+                  ]}/>
+                </Slide>
+                <Slide transition={["slide"]} bgColor="primary" maxWidth="1400px">
+                    <CodeSlide
+                    lang="jsx"
+                    slideIndex={12}
+                    code={require("raw!../assets/step_5.example")}
+                    ranges={[
+                     { loc: [2, 3] },
+                  { loc: [23, 26] }
+                  ]}/>
+                </Slide>
+                <Slide transition={["slide"]}>
+                    <Heading size={1} caps textColor="tertiary">
                         Problems
                     </Heading>
                     <List>
@@ -258,6 +299,39 @@ export default class Presentation extends React.Component {
                         style={{textDecoration:'line-through'}}>Messy</span></ListItem></Appear>
                         <Appear><ListItem textColor="tertiary"><span style={{textDecoration:'line-through'}}>Not composable and reusable</span></ListItem></Appear>
                     </List>
+                </Slide>
+                <Slide transition={["slide"]}>
+                    <Heading size={1} caps textColor="tertiary">
+                        Step 7
+                    </Heading>
+                    <Appear>
+                        <Heading size={5} textColor="#00D8FF">
+                            PropTypes and Production Builds
+                        </Heading>
+                    </Appear>
+                </Slide>
+                <Slide transition={["slide"]} bgColor="primary" maxWidth="1400px">
+                    <CodeSlide
+                    lang="jsx"
+                    slideIndex={13}
+                    code={require("raw!../assets/step_5.example")}
+                    ranges={[
+                     { loc: [54, 58] }
+                  ]}/>
+                </Slide>
+                <Slide transition={["zoom"]} bgColor="primary">
+                    <Heading size={1} caps fit>
+                        PropTypes are useful, but expensive
+                    </Heading>
+                    <Appear><Text textColor="tertiary">Let's use the Chrome CPU Profiler</Text></Appear>
+                </Slide>
+                <Slide transition={["zoom"]} bgColor="primary">
+                    <Text textColor="tertiary">Dev Build</Text>
+                    <Image src={images.devProfile} margin="0px auto 40px" width="100%"/>
+                </Slide>
+                <Slide transition={["zoom"]} bgColor="primary">
+                    <Text textColor="tertiary">Prod Build</Text>
+                    <Image src={images.prodProfile} margin="0px auto 40px" width="100%"/>
                 </Slide>
             </Deck>
         </Spectacle>

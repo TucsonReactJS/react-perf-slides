@@ -282,7 +282,7 @@ export default class Presentation extends React.Component {
                 <Slide transition={["slide"]} bgColor="primary" maxWidth="1400px">
                     <CodeSlide
                     lang="jsx"
-                    slideIndex={12}
+                    slideIndex={13}
                     code={require("raw!../assets/step_5.example")}
                     ranges={[
                      { loc: [2, 3] },
@@ -301,9 +301,6 @@ export default class Presentation extends React.Component {
                     </List>
                 </Slide>
                 <Slide transition={["slide"]}>
-                    <Heading size={1} caps textColor="tertiary">
-                        Step 7
-                    </Heading>
                     <Appear>
                         <Heading size={5} textColor="#00D8FF">
                             PropTypes and Production Builds
@@ -313,7 +310,7 @@ export default class Presentation extends React.Component {
                 <Slide transition={["slide"]} bgColor="primary" maxWidth="1400px">
                     <CodeSlide
                     lang="jsx"
-                    slideIndex={13}
+                    slideIndex={14}
                     code={require("raw!../assets/step_5.example")}
                     ranges={[
                      { loc: [54, 58] }
@@ -332,6 +329,64 @@ export default class Presentation extends React.Component {
                 <Slide transition={["zoom"]} bgColor="primary">
                     <Text textColor="tertiary">Prod Build</Text>
                     <Image src={images.prodProfile} margin="0px auto 40px" width="100%"/>
+                </Slide>
+                <Slide transition={["slide"]} bgColor="primary" maxWidth="1400px">
+                    <CodeSlide
+                    lang="jsx"
+                    slideIndex={15}
+                    code={require("raw!../assets/webpack.example")}
+                    ranges={[
+                     { loc: [8, 18] }
+                  ]}/>
+                </Slide>
+                <Slide transition={["slide"]}>
+                    <Heading size={1} caps textColor="tertiary">
+                        Step 7
+                    </Heading>
+                    <Heading size={5} textColor="#00D8FF">
+                        transform-react-constant-elements
+                    </Heading>
+                </Slide>
+                <Slide transition={["zoom"]} bgColor="primary">
+                    <Text textColor="tertiary">Dev Build</Text>
+                    <Image src={images.devProfile} margin="0px auto 40px" width="100%"/>
+                </Slide>
+                <Slide transition={["slide"]} bgColor="primary" maxWidth="1400px">
+                    <CodeSlide
+                    lang="jsx"
+                    slideIndex={16}
+                    code={require("raw!../assets/step_7.example")}
+                    ranges={[
+                     { loc: [18, 20] },
+                     { loc: [36, 37] }
+                  ]}/>
+                </Slide>
+                <Slide transition={["slide"]}>
+                    <Heading size={1} caps textColor="tertiary">
+                        Step 8
+                    </Heading>
+                    <Heading size={5} textColor="#00D8FF">
+                        transform-react-constant-elements
+                    </Heading>
+                </Slide>
+                <Slide transition={["slide"]} bgColor="primary" maxWidth="1400px">
+                    <CodeSlide
+                    lang="jsx"
+                    slideIndex={17}
+                    code={require("raw!../assets/step_8.example")}
+                    ranges={[
+                     { loc: [12, 27] },
+                     { loc: [64, 65] }
+                  ]}/>
+                </Slide>
+                <Slide transition={["slide"]} bgColor="primary" maxWidth="1400px">
+                    <CodeSlide
+                    lang="jsx"
+                    slideIndex={15}
+                    code={require("raw!../assets/babelrc.example")}
+                    ranges={[
+                     { loc: [1, 2] }
+                  ]}/>
                 </Slide>
             </Deck>
         </Spectacle>

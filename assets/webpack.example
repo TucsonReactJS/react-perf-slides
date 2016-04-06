@@ -1,0 +1,25 @@
+{
+    resolve: {
+        extensions: ['', '.js', '.jsx']
+    },
+    output: {
+        path: __dirname + '/dist/js',
+        filename: 'client.js'
+    },
+    plugins: [
+        new webpack.DefinePlugin({
+            'process.env': {
+                'NODE_ENV': '"production"'
+            }
+        }),
+        new webpack.optimize.DedupePlugin(),
+        new webpack.optimize.UglifyJsPlugin(),
+        new webpack.NoErrorsPlugin()
+    ],
+    module: {
+        loaders: [
+            { test: /\.jsx$/, loader: 'babel-loader' },
+            { test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader' }
+        ]
+    }
+}

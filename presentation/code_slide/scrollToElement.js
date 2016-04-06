@@ -5,39 +5,45 @@
 const Tween = require('component-tween');
 const raf = require('component-raf');
 
-function scroll(element) {
-  var y = element.scrollTop;
-  var x = element.scrollLeft;
-  return { top: y, left: x };
+function scroll( element ) {
+    var y = element.scrollTop;
+    var x = element.scrollLeft;
+    return { top: y, left: x };
 }
 
-function scrollToElement(element, x, y, options) {
-  options = options || {};
+function scrollToElement( element, x, y, options ) {
+    options = options || {};
 
-  var start = scroll(element);
+    if ( !element ) {
+        return;
+    }
 
-  var tween = Tween(start)
+    var start = scroll(element);
+
+
+    var tween = Tween(start)
     .ease(options.ease || 'out-circ')
     .to({ top: y, left: x })
     .duration(options.duration || 1000);
 
-  tween.update(function(o){
-    element.scrollTop = o.top | 0;
-    element.scrollLeft = o.left | 0;
-  });
+    tween.update(function ( o ) {
+        element.scrollTop = o.top | 0;
+        element.scrollLeft = o.left | 0;
+    });
 
-  tween.on('end', function(){
-    animate = function(){};
-  });
+    tween.on('end', function () {
+        animate = function () {
+        };
+    });
 
-  function animate() {
-    raf(animate);
-    tween.update();
-  }
+    function animate() {
+        raf(animate);
+        tween.update();
+    }
 
-  animate();
+    animate();
 
-  return tween;
+    return tween;
 }
 
 module.exports = scrollToElement;

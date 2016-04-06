@@ -13,16 +13,17 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "normalize.css": "3.0.3",
-    "react": "^0.14.3",
-    "react-dom": "^0.14.3",
-    "spectacle": "^1.0.0",
-    "spectacle-code-slide": "^0.1.10",
     "component-raf": "^1.2.0",
     "component-tween": "^1.2.0",
     "lodash.clamp": "^4.0.1",
     "lodash.memoize": "^4.0.1",
-    "lodash.padstart": "^4.2.0"
+    "lodash.padstart": "^4.2.0",
+    "normalize.css": "3.0.3",
+    "react": "^0.14.3",
+    "react-addons-shallow-compare": "^0.14.8",
+    "react-dom": "^0.14.3",
+    "spectacle": "^1.0.0",
+    "spectacle-code-slide": "^0.1.10"
   },
   "devDependencies": {
     "autoprefixer-core": "^6.0.1",

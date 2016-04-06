@@ -1,10 +1,10 @@
 const React = require('react');
-const {PropTypes} = React;
+const {PropTypes, Children} = React;
 
-const {Slide} = require('spectacle');
+const {Slide,Text} = require('spectacle');
 const CodeSlideTitle = require('./CodeSlideTitle');
 const CodeSlideNote = require('./CodeSlideNote');
-
+const shallowCompare = require('react-addons-shallow-compare');
 const clamp = require('lodash.clamp');
 const padStart = require('lodash.padstart');
 const getHighlightedCodeLines = require('./getHighlightedCodeLines');
@@ -67,10 +67,27 @@ class CodeSlide extends React.Component {
         });
     }
 
+    shouldComponentUpdate( nextProps, nextState ) {
+        return shallowCompare(this, nextProps, nextState);
+    }
+
+    componentWillMount() {
+        this.setState({ lines: this.generateLinesFromCode(this.props) });
+    }
+
+    componentWillReceiveProps( nextProps ) {
+        this.setState({ lines: this.generateLinesFromCode(nextProps) });
+    }
+
     componentWillUnmount() {
         document.removeEventListener('keydown', this.onKeyDown);
         window.removeEventListener('storage', this.onStorage);
         window.removeEventListener('resize', this.onResize);
+    }
+
+    generateLinesFromCode( props ) {
+        const {code, lang} = props;
+        return getHighlightedCodeLines(code, lang);
     }
 
     getStorageId() {
@@ -105,9 +122,9 @@ class CodeSlide extends React.Component {
     };
 
     onKeyDown = e => {
-        if ( this.props.slideIndex !== parseInt(this.props.route.slide) ) {
-            return;
-        }
+        //if ( this.props.slideIndex !== parseInt(this.props.route.slide) ) {
+        //    return;
+        //}
 
         let prev = this.state.active;
         let active = null;
@@ -132,13 +149,13 @@ class CodeSlide extends React.Component {
     };
 
     render() {
-        const {code, lang, ranges, ...rest} = this.props;
-        const {active} = this.state;
+        const {code, lang, ranges} = this.props;
+        const {active,lines} = this.state;
 
         const range = ranges[active] || {};
         const loc = range.loc || [];
 
-        const lines = getHighlightedCodeLines(code, lang).map(( line, index ) => {
+        const lineEls = lines.map(( line, index ) => {
             return <div
             key={index}
             ref={startOrEnd(index, loc)}
@@ -147,11 +164,9 @@ class CodeSlide extends React.Component {
         });
 
         return (
-        <Slide bgColor="#122b45" margin={1} {...rest}>
         <pre ref="container" style={style}>
-          <code>{lines}</code>
+          <code>{lineEls}</code>
         </pre>
-        </Slide>
         );
     }
 }

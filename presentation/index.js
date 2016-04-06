@@ -62,6 +62,15 @@ export default class Presentation extends React.Component {
                         Tucson ReactJS
                     </Heading>
                 </Slide>
+                <Slide transition={["zoom", "fade"]} bgColor="primary"
+                       notes="<ul><li>talk about that</li><li>and that</li></ul>">
+                    <Image src={images.me} margin="0px auto 40px" height="293px"/>
+                    <Text caps size={1} textColor="tertiary">Charles King</Text>
+                    <Text textColor="tertiary" margin="20px auto 20px" ><Link href="http://twitter.com/thebringking" textColor="#00D8FF">@TheBringKing</Link> on Twitter</Text>
+                    <Text textSize={"2rem"} margin="20px auto 20px"  textColor="tertiary">President @ <Link  href="http://rinconstrategies.io" textColor="#00D8FF">Rincon
+                        Strategies</Link></Text>
+
+                </Slide>
                 <Slide transition={["slide"]} bgColor="primary">
                     <Fill>
                         <Heading caps size={1} textColor="tertiary">
@@ -76,11 +85,31 @@ export default class Presentation extends React.Component {
                         </List>
                     </Fill>
                 </Slide>
-                <Slide transition={["zoom", "fade"]} bgColor="primary"
-                       notes="<ul><li>talk about that</li><li>and that</li></ul>">
-                    <Image src={images.me} margin="0px auto 40px" height="293px"/>
-                    <Text caps size={1} textColor="tertiary">Charles King</Text>
-                    <Link href="http://twitter.com/thebringking" textColor="tertiary" size={1}>@TheBringKing</Link>
+                <Slide transition={["slide"]} bgColor="primary">
+                    <Fill>
+                        <Heading caps size={1} textColor="tertiary">
+                            Code
+                        </Heading>
+                    </Fill>
+                    <Fill>
+                        <Text>
+                            <Link href="https://github.com/TucsonReactJS/react-perf-slides" caps size={1}
+                                  textColor="#00D8FF">
+                                This Deck
+                            </Link>
+                        </Text>
+                        <Text>
+                            <Link href="https://github.com/TucsonReactJS/react-perf" caps size={1} textColor="#00D8FF">
+                                ReactJS Performance
+                            </Link>
+                        </Text>
+                        <Text>
+                            <Link href="https://github.com/RinconStrategies/react-web-animation" caps size={1}
+                                  textColor="#00D8FF">
+                                React Web Animation
+                            </Link>
+                        </Text>
+                    </Fill>
                 </Slide>
                 <Slide transition={["slide"]} bgColor="primary">
                     <Fill>
@@ -92,20 +121,21 @@ export default class Presentation extends React.Component {
                         <Image src={images.perfTool} margin="40px auto 40px" height="293px"/>
                     </Fill>
                 </Slide>
-                <CodeSlide
-                bgColor="primary"
-                transition={[]}
-                lang="js"
-                code={require("raw!../assets/step_1.example")}
-                ranges={[
+                <Slide transition={["slide"]} bgColor="primary">
+                    <CodeSlide
+                    lang="js"
+                    slideIndex={6}
+                    code={require("raw!../assets/step_1.example")}
+                    ranges={[
                   { loc: [116, 144] },
                   { loc: [119, 120]},
                   { loc: [120, 121]},
                   { loc: [121, 122]},
                   { loc: [124, 136]},
                   { loc: [136, 141]},
-                  { loc: [141, 142]},
-            ]}/>
+                  { loc: [141, 142]}]}/>
+                </Slide>
+
                 <Slide transition={["slide"]} bgDarken={0.75}>
                     <Appear fid="1">
                         <Heading size={1} caps fit textColor="primary">

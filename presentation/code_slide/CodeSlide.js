@@ -38,7 +38,7 @@ const style = {
     margin: 0,
     whiteSpace: 'pre-wrap',
     wordBreak: 'break-word',
-    fontSize: '1rem'
+    fontSize: '.8rem'
 };
 
 class CodeSlide extends React.Component {

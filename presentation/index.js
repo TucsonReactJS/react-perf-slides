@@ -66,8 +66,11 @@ export default class Presentation extends React.Component {
                        notes="<ul><li>talk about that</li><li>and that</li></ul>">
                     <Image src={images.me} margin="0px auto 40px" height="293px"/>
                     <Text caps size={1} textColor="tertiary">Charles King</Text>
-                    <Text textColor="tertiary" margin="20px auto 20px" ><Link href="http://twitter.com/thebringking" textColor="#00D8FF">@TheBringKing</Link> on Twitter</Text>
-                    <Text textSize={"2rem"} margin="20px auto 20px"  textColor="tertiary">President @ <Link  href="http://rinconstrategies.io" textColor="#00D8FF">Rincon
+                    <Text textColor="tertiary" margin="20px auto 20px"><Link href="http://twitter.com/thebringking"
+                                                                             textColor="#00D8FF">@TheBringKing</Link> on
+                        Twitter</Text>
+                    <Text textSize={"2rem"} margin="20px auto 20px" textColor="tertiary">President @ <Link
+                    href="http://rinconstrategies.io" textColor="#00D8FF">Rincon
                         Strategies</Link></Text>
 
                 </Slide>
@@ -121,9 +124,25 @@ export default class Presentation extends React.Component {
                         <Image src={images.perfTool} margin="40px auto 40px" height="293px"/>
                     </Fill>
                 </Slide>
-                <Slide transition={["slide"]} bgColor="primary">
+                <Slide transition={["slide"]}>
+                    <Heading size={1} caps textColor="red">
+                        Warning!
+                    </Heading>
+                    <Text caps size={1} textColor="tertiary">
+                        These are all optimizations. Build your app first, then do this later.
+                    </Text>
+                </Slide>
+                <Slide transition={["slide"]}>
+                    <Heading size={1} caps textColor="tertiary">
+                        Step 1
+                    </Heading>
+                    <Heading size={5} caps textColor="#00D8FF">
+                        Initial Implementation
+                    </Heading>
+                </Slide>
+                <Slide transition={["slide"]} bgColor="primary" maxWidth="1400px">
                     <CodeSlide
-                    lang="js"
+                    lang="jsx"
                     slideIndex={6}
                     code={require("raw!../assets/step_1.example")}
                     ranges={[
@@ -135,89 +154,87 @@ export default class Presentation extends React.Component {
                   { loc: [136, 141]},
                   { loc: [141, 142]}]}/>
                 </Slide>
-
-                <Slide transition={["slide"]} bgDarken={0.75}>
-                    <Appear fid="1">
-                        <Heading size={1} caps fit textColor="primary">
-                            Full Width
-                        </Heading>
-                    </Appear>
-                    <Appear fid="2">
-                        <Heading size={1} caps fit textColor="tertiary">
-                            Adjustable Darkness
-                        </Heading>
-                    </Appear>
-                    <Appear fid="3">
-                        <Heading size={1} caps fit textColor="primary">
-                            Background Imagery
-                        </Heading>
-                    </Appear>
-                </Slide>
-                <Slide transition={["zoom", "fade"]} bgColor="primary">
-                    <Heading caps fit>Flexible Layouts</Heading>
-                    <Layout>
-                        <Fill>
-                            <Heading size={4} caps textColor="secondary" bgColor="white" margin={10}>
-                                Left
-                            </Heading>
-                        </Fill>
-                        <Fill>
-                            <Heading size={4} caps textColor="secondary" bgColor="white" margin={10}>
-                                Right
-                            </Heading>
-                        </Fill>
-                    </Layout>
-                </Slide>
-                <Slide transition={["slide"]} bgColor="black">
-                    <BlockQuote>
-                        <Quote>Wonderfully formatted quotes</Quote>
-                        <Cite>Ken Wheeler</Cite>
-                    </BlockQuote>
-                </Slide>
-                <Slide transition={["spin", "zoom"]} bgColor="tertiary">
-                    <Heading caps fit size={1} textColor="primary">
-                        Inline Markdown
+                <Slide transition={["slide"]}>
+                    <Heading size={1} caps textColor="tertiary">
+                        Problems
                     </Heading>
-                    <Markdown>
-                        {`
-![Markdown Logo](${images.markdown.replace("/", "")})
-
-You can write inline images, [Markdown Links](http://commonmark.org), paragraph text and most other markdown syntax
-* Lists too!
-* With ~~strikethrough~~ and _italic_
-* And lets not forget **bold**
-              `}
-                    </Markdown>
-                </Slide>
-                <Slide transition={["slide", "spin"]} bgColor="primary">
-                    <Heading caps fit size={1} textColor="tertiary">
-                        Smooth
-                    </Heading>
-                    <Heading caps fit size={1} textColor="secondary">
-                        Combinable Transitions
-                    </Heading>
-                </Slide>
-                <Slide transition={["fade"]} bgColor="secondary" textColor="primary">
                     <List>
-                        <Appear><ListItem>Inline style based theme system</ListItem></Appear>
-                        <Appear><ListItem>Autofit text</ListItem></Appear>
-                        <Appear><ListItem>Flexbox layout system</ListItem></Appear>
-                        <Appear><ListItem>React-Router navigation</ListItem></Appear>
-                        <Appear><ListItem>PDF export</ListItem></Appear>
-                        <Appear><ListItem>And...</ListItem></Appear>
+                        <Appear><ListItem textColor="tertiary">Re-rendering the entire app</ListItem></Appear>
+                        <Appear><ListItem textColor="tertiary">Messy</ListItem></Appear>
+                        <Appear><ListItem textColor="tertiary">Not composable and reusable</ListItem></Appear>
                     </List>
                 </Slide>
-                <Slide transition={["slide"]} bgColor="primary">
-                    <Heading size={1} caps fit textColor="tertiary">
-                        Your presentations are interactive
+                <Slide transition={["slide"]}>
+                    <Heading size={1} caps textColor="tertiary">
+                        Step 2
                     </Heading>
-                    <Interactive/>
+                    <Heading size={5} caps textColor="#00D8FF">
+                        Componentization
+                    </Heading>
                 </Slide>
-                <Slide transition={["spin", "slide"]} bgColor="tertiary">
-                    <Heading size={1} caps fit lineHeight={1.5} textColor="primary">
-                        Made with love in Seattle by
+                <Slide transition={["slide"]} bgColor="primary" maxWidth="1400px">
+                    <CodeSlide
+                    lang="jsx"
+                    slideIndex={6}
+                    code={require("raw!../assets/step_2.example")}
+                    ranges={[
+                  { loc: [106, 130] },
+                  { loc: [126, 127]}]}/>
+                </Slide>
+                <Slide transition={["slide"]} bgColor="primary" maxWidth="1400px">
+                    <CodeSlide
+                    lang="jsx"
+                    slideIndex={6}
+                    code={require("raw!../assets/step_2_1.example")}
+                    ranges={[
+                  { loc: [21, 32] }
+                  ]}/>
+                </Slide>
+                <Slide transition={["slide"]}>
+                    <Heading size={1} caps textColor="tertiary">
+                        Problems
                     </Heading>
-                    <Link href="http://www.formidablelabs.com"><Image width="100%" src={images.logo}/></Link>
+                    <List>
+                        <Appear><ListItem textColor="tertiary" ><span>Re-rendering the entire app</span></ListItem></Appear>
+                        <Appear><ListItem textColor="tertiary"><span style={{textDecoration:'line-through'}}>Messy</span></ListItem></Appear>
+                        <Appear><ListItem textColor="tertiary"><span style={{textDecoration:'line-through'}}>Not composable and reusable</span></ListItem></Appear>
+                    </List>
+                </Slide>
+                <Slide transition={["slide"]}>
+                    <Heading size={1} caps textColor="tertiary">
+                        How do we fix it?
+                    </Heading>
+                    <Heading size={5}  textColor="#00D8FF">
+                        React Performance Tools
+                    </Heading>
+                </Slide>
+                <Slide transition={["slide"]}>
+                    <Heading size={1} caps textColor="tertiary">
+                        Step 3
+                    </Heading>
+                    <Heading size={5}  textColor="#00D8FF">
+                        shouldComponentUpdate
+                    </Heading>
+                </Slide>
+                <Slide transition={["slide"]} bgColor="primary" maxWidth="1400px">
+                    <CodeSlide
+                    lang="jsx"
+                    slideIndex={6}
+                    code={require("raw!../assets/step_3.example")}
+                    ranges={[
+                  { loc: [19, 37] },
+                    { loc: [21, 24] }
+                  ]}/>
+                </Slide>
+                <Slide transition={["slide"]}>
+                    <Heading size={1} caps textColor="tertiary">
+                        Problems
+                    </Heading>
+                    <List>
+                        <Appear><ListItem textColor="tertiary" ><span style={{textDecoration:'line-through'}}>Re-rendering the entire app</span></ListItem></Appear>
+                        <Appear><ListItem textColor="tertiary"><span style={{textDecoration:'line-through'}}>Messy</span></ListItem></Appear>
+                        <Appear><ListItem textColor="tertiary"><span style={{textDecoration:'line-through'}}>Not composable and reusable</span></ListItem></Appear>
+                    </List>
                 </Slide>
             </Deck>
         </Spectacle>
